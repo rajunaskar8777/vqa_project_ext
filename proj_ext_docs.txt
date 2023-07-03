@@ -3,23 +3,23 @@ Suggested improvements of YOLO:-
 
 1) The Focus Layer : 
 
-replaced the three first layers of the network. It helped reducing the number of parameters, 
+replaced the three first layers of the network. It helped to reduce the number of parameters, 
 the number of FLOPS and the CUDA memory while improving the speed of the forward and backward passes with minor effects 
 on the mAP (mean Average Precision).
 
 2) Eliminating Grid Sensitivity: 
 
 It was hard for the previous versions of YOLO to detect bounding boxes on image corners 
-mainly due to the equations used to predict the bounding boxes, but the new equations presented above helped solving this 
+mainly due to the equations used to predict the bounding boxes, but the new equations presented above helped to solve this 
 problem by expanding the range of the center point offset from (0-1) to (-0.5,1.5) therefore the offset can be easily 1 or 0 
-(coordinates can be in the image's edge) as shown in the image in the left. Also the height and width scaling ratios were 
+(coordinates can be in the image's edge) as shown in the image on the left. Also, the height and width scaling ratios were 
 unbounded in the previous equations which may lead to training instabilities but now this problem has been reduced as shown 
 in the figure on the right.
 
 3) The running environment: 
 
 The previous versions of YOLO were implemented on the Darknet framework that is written in C, 
-however YOLOv5 is implemented in Pytorch giving more flexibility to control the encoded operations.
+however, YOLOv5 is implemented in Pytorch giving more flexibility to control the encoded operations.
 
 For LXMERT documentation:-  visit this link from official hugging face_lib
 
